@@ -1,0 +1,12 @@
+# Code Highlighting
+
+~~~ { .lua }
+local a = setmetatable( 
+    { a = a }, 
+    { __index = function(t, k)
+          print(k)
+      end
+    }
+) 
+~~~
+
