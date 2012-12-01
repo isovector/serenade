@@ -1,3 +1,8 @@
+---
+status: scratch
+toc: no
+...
+
 # Code Highlighting
 
 ~~~ { .lua }
