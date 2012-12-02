@@ -1,0 +1,7 @@
+---
+status: in-progress
+toc: no
+...
+
+> However, in many other respects, [metalua] is closer to Common Lisp: where Scheme insists on doing The Right Thing, CL and metalua assume that the programmer knows better than the compiler. Therefore, when a powerful but potentially dangerous feature is considered, metalua generally tries to warn the user that he's entering the twilight zone, but will let him proceed. 
+- Metalua Manual
