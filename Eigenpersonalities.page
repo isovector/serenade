@@ -11,3 +11,11 @@ Say we have a large collection of images of faces and we want to determine wheth
 
 This is easily visualized. In the archetypical example, our metric space is R^3^ - our everyday experience of the world. In R^3^, objects have three coordinates, an X (from left to right), a Y (up and down), and a Z (forwards and backwards). If (ignoring the problem of spherical coordinates) we were to plot the peak of every mountain in the world in an R^3^ graph, it would be trivial to point out mountain ranges, their relative altitudes, and other potentially geographically useful properties.
 
+Another easily-to-imagine metric space is the RGB space, which describes colors. We can make our axes the amount of Red in a color, the amount of Green, and the amount of Blue. Plotting a pumpkin in this graph might have a coordinate of (R:1, G:0.7. B:0), while a grape might be more like (R:0.5, G:0, B:0.5). In this example, our colors are measured from 0 to 1, where 1 means as colorful as possible in the given coordinate. B:1 describes the purest blue imaginable. By looking at clusters in the RGB space we can see which objects are similarly colored. But this isn't the only [color space that we can describe](http://en.wikipedia.org/wiki/Category:Color_space). Depending on what we want to know about a color, it might make more sense to analyze it in a different metric space.
+
+For example, we can instead look at colors in the HSL model instead describes colors in terms of their hue (that is to say, a position in the rainbow. Hue varies from red to yellow to green to blue to red, with everything in between), the saturation (how vivid the hue is), and the lightness (how dark or light the color is). Clustering in HSL more easily allows us to see if an object is well-lit, or if a pair of jeans has faded in the wash. 
+
+[HSL]: Hue, Saturation, Luminence
+
+Despite the fact that RHB and HSL describe the exact same colors, they highlight very different features between a set. This suggests that we can learn different things about objects simply by changing the way we look at them. 
+
