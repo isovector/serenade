@@ -1,0 +1,13 @@
+---
+status: in-progress
+toc: no
+...
+
+## Eigenfaces
+
+The wonderful blog [Math ∩ Programming][] has a great primer on face recognition, and in particular, one of the means of doing so: eigenfaces. While faces are not in fact personalities, the main topic of this post is rather abstract, and will likely make more sense as an isomorphism than to be presented by itself. The discussion of eigenfaces is paraphrased directly from Math ∩ Programming, so please do yourself a favor and read the [original article][] - you will not be disappointed.
+
+Say we have a large collection of images of faces and we want to determine whether a picture not in our database is the same person as one *in* our database. If we were able to cluster our database into a configuration space (or "face-space" as the original article calls it), such that similar images are close together and dissimilar faces are far away, we would be able to describe a metric space (that is, a space we can measure to find distances). Presumably if a given image had a small distance to a cluster in our metric space, the two images are of the same face.
+
+This is easily visualized. In the archetypical example, our metric space is R^3^ - our everyday experience of the world. In R^3^, objects have three coordinates, an X (from left to right), a Y (up and down), and a Z (forwards and backwards). If (ignoring the problem of spherical coordinates) we were to plot the peak of every mountain in the world in an R^3^ graph, it would be trivial to point out mountain ranges, their relative altitudes, and other potentially geographically useful properties.
+
