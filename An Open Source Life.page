@@ -1,7 +1,17 @@
 ---
-status: skeleton
+status: in-progress
 toc: no
 ...
+
+Growing up, my father always had little chunks of wisdom to hand down to me. Among other jewels, he would say, "do what you love, and the money will follow", and "if you don't have enough money, find a better job". While I don't want to commit the mind projection fallacy, I wouldn't imagine there are a great many examples of boys who don't admire their father. Presumably as they get older they judge their old men by more rigorous standards, and in many cases, their dads lose the superhero personas once attributed to them. While my father has a lot of flaws that I don't intend to repeat, I think that his outlook on life is exactly right; it's beautiful; it's sublime.
+
+The default tendency of homo sapiens, like the animal kingdom, seems to tend towards hoarding, towards monopolizing.
+
+My first introduction to open source was through my cousin. One reason or another meant that he had a Linux live-cd on his person, and he seemed to take great delight in showing it to me. For my part, I was equally delighted: an entire operating system running directly off a cd-rom! How novel! The novelties, however, didn't end there. At the time I had been programming for a year or two and had a great curiosity for all things. I dreamed of tinkering with absolutely everything I could, and my inital forays into programming consisted of games, databases, compilers, and presentation engines, among other things.The fact that this Linux was coded together by volunteers, and that all of the source code was available for anyone to look at dumbfounded me. What a resource! This one project likely had enough puzzles in it to teach me new things for the rest of my life.
+
+Fast forward to the current day. It's eight years later and I have been using Linux on a daily basis for five of them.
+
+
 
 > As I grew up, my silly, naive and idealistic capitalist side waned and I settled down into the comfort of being a rabid old Commie. I gave my software away for free. I gave my music away for free ... People posted on the Internet, oh yeah, use this stuff, it's quite good. People I spoke to at computer festivals and other such geekery pissups said 'Oh you're the guy that wrote $thing? Cool, I use that' and bought me beer. Long story short, fuck capitalism. Give the stuff you love away for free, and earn money from the stuff you don't care about. <cite>Gordonjcp, Slashdot comment</cite>
 
