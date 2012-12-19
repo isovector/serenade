@@ -32,6 +32,7 @@ This example will create the following global variables *save.meadow.isOpen*, *s
 
 ## Proposal
 Add a new affirm operator (->) which will create intermediate tables should they not exist.
+
 ~~~ { .lua }
 -- The following pairs of lines are equivalent
 foo->bar = true
