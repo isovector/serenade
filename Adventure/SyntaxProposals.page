@@ -30,6 +30,8 @@ affirm (save.meadow) { isOpen, wasOpen(true), chessboard.queenPosition(2, 3) }
 
 This example will create the following global variables *save.meadow.isOpen*, *save.meadow.wasOpen = true*, *save.meadow.chessboard.queenPosition = 2,3*. Furthermore, it will create the following local variables *isOpen*, *wasOpen*, *chessboard.queenPosition*. The identifiers in braces indicate relevant variables,  while the identifier in parenthesis indicates a prefix in the global table (but not in the locals).
 
+For this to work properly, we will also need to introduce the concept of variable references, so that the POD locals can change their global counterparts. This functionality should probably be visible to the user, in case they might want to use it also. A custom source transformer could probably look up ids in a table, if they are references then instead return the full expression the reference was bound to.
+
 ## Proposal
 Add a new affirm operator (->) which will create intermediate tables should they not exist.
 
