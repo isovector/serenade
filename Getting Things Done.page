@@ -24,6 +24,7 @@ Add as many inboxes as necessary. Every situation should have an inbox correspon
 - Delete all lists.
 - Make a new list called MAIN.
 - Create a new smart list with "dueBefore:now" and name it as "~Due"
+- Enable "Task Clouds" in Settings > General 
 
 ## Situations to have inboxes
 - **in general: it happened; how can i record it?**
@@ -90,6 +91,52 @@ Block out a time to focus on meta tasks
 - Work on time blocking
 - For each context, block out an hour to explicitly work on it
 - Make a block to remove unnecessary items if they are not being used
+
+## Implementing contexts in RTM
+Implement contexts as locations. Use the name as the name of the context. **Use one word context names** because sometimes RTM gets stupid.
+- For location-based contexts, use the real location.
+- For logical contexts, use the north pole.
+
+## Emptying collection bins workflow
+- Collection bins
+- Can I ignore it? (Y: trash)
+- Requires action? (N: filing system)
+- Defining next action
+- <2 min to do? (Y: do it now!)
+- Can I delegate? (N: context list)
+- Delegate
+- Follow-up reminder ([boomerang](http://www.boomeranggmail.com/))
+
+Guidelines:
+- Process the top item first
+- Process one item at a time
+- **Never** put anything back into an inbox.
+
+Remember: we want to *define work*, not *do work*. If you are good at this you can do 50 in 10 minutes.
+
+Strategy: estimate how long it will take to empty. Make your estimate a little less sane than you originally expect. Try to beat the time. Time how long it takes, and then reflect on the relationship between your estimate and the real time.
+
+## Processing queue
+If easy:
+> i t "next action @context #MAIN" <enter> <esc> <del>
+If project:
+> i t "Set a time to think about <project> #MAIN #tag" <enter> <esc> <del>
+Can set importance with
+> !1
+Can set time with
+> ^<when>
+
+## Do the same thing with email
+(todo)
+
+## How to get things done
+Check Due list in the morning
+If you have a reasonable belief that future you will be significantly better at a task than you, schedule it to them
+This completes urgent items
+Check calendar, ensure it is reasonable
+Have rules for when to schedule contexts and projects. Use reminders to schedule this
+During meta schedule, assign due and inbox time blocks. 
+While working on a context, scan through the whole list to assign relative importance
 
 ## Misc
 - Explore mnemonics. [Memory palaces](http://en.wikipedia.org/wiki/Method_of_loci).
