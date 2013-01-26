@@ -121,11 +121,11 @@ Strategy: estimate how long it will take to empty. Make your estimate a little l
 ## Processing queue
 If easy:
 
-> i t "next action @context #MAIN" <enter> <esc> <del>
+> i t "next action @context #MAIN" `<enter> <esc> <del>`
 
 If project:
 
-> i t "Set a time to think about <project> #MAIN #tag" <enter> <esc> <del>
+> i t "Set a time to think about <project> #MAIN #tag" `<enter> <esc> <del>`
 
 Can set importance with:
 
@@ -133,7 +133,7 @@ Can set importance with:
 
 Can set time with:
 
-> ^<when>
+> `^<when>`
 
 ## Do the same thing with email
 (todo)
