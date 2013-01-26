@@ -86,7 +86,9 @@ Track a meta context sorted by time, as well as keeping track of contexts. This 
 
 ## Time blocking
 Block out times that are fixed in a certain calendar. 
+
 Block out flexible times in a different calendar. 
+
 Block out a time to focus on meta tasks
 - Work on time blocking
 - For each context, block out an hour to explicitly work on it
@@ -118,28 +120,35 @@ Strategy: estimate how long it will take to empty. Make your estimate a little l
 
 ## Processing queue
 If easy:
+
 > i t "next action @context #MAIN" <enter> <esc> <del>
 
 If project:
+
 > i t "Set a time to think about <project> #MAIN #tag" <enter> <esc> <del>
 
 Can set importance with:
+
 > !1
 
 Can set time with:
+
 > ^<when>
 
 ## Do the same thing with email
 (todo)
 
 ## How to get things done
-Check Due list in the morning.
-If you have a reasonable belief that future you will be significantly better at a task than you, schedule it to them.
-This completes urgent items.
-Check calendar, ensure it is reasonable.
-Have rules for when to schedule contexts and projects. Use reminders to schedule this.
-During meta schedule, assign due and inbox time blocks. 
-While working on a context, scan through the whole list to assign relative importance.
+-Check Due list in the morning.
+-If you have a reasonable belief that future you will be significantly better at a task than you, schedule it to them.
+-This completes urgent items.
+-Check calendar, ensure it is reasonable.
+-Have rules for when to schedule contexts and projects. Use reminders to schedule this.
+
+During meta schedule, assign due and inbox time blocks. While working on a context, scan through the whole list to assign relative importance.
+
+## TODO
+Read about implementation details in google document.
 
 ## Misc
 - Explore mnemonics. [Memory palaces](http://en.wikipedia.org/wiki/Method_of_loci).
