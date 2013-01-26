@@ -62,10 +62,35 @@ Look for gaps in your collection system. When you find one, figure out a way to 
     - A consistent place or set of places for project files **vvv**
 - A filing system
     - Electronic ([Dropbox](https://www.dropbox.com/?src=shmodel))
+    - Physical (filing system)
 
 ## Calendar components
-Make a million calendars (time blocks, events, reminders, things to consider)
+Make a million calendars (time blocks, things that would be nice, events, reminders, things to consider)
 **Ensure you allocate travel time** 
+
+## Defining contexts
+What is a context? Things you can do without a context switch - located by location or by logical connection.
+Some contexts:
+- A google todo list for each person I usually do work with (so while interacting you can switch to it and attack them as much as you can)
+- Errands
+- Home
+- Internet with keyboard (writing lengthy emails)
+- Internet without a keyboard (reading articles)
+- School
+- Phone calls
+
+Contexts are a little insane, because you get caught up doing trivial things - not for saving the world (or other important projects).
+
+Track a meta context sorted by time, as well as keeping track of contexts. This shouldn't be a part of the real GTD:
+
+## Time blocking
+Block out times that are fixed in a certain calendar. 
+Block out flexible times in a different calendar. 
+Block out a time to focus on meta tasks
+- Work on time blocking
+- For each context, block out an hour to explicitly work on it
+- Make a block to remove unnecessary items if they are not being used
 
 ## Misc
 - Explore mnemonics. [Memory palaces](http://en.wikipedia.org/wiki/Method_of_loci).
+- Add a smart list of things that have been neglected many times, so we can reimagine if they're useful
