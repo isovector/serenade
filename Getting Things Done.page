@@ -9,16 +9,30 @@ Out of all resources, attention is the most important. Even small annoyances can
 - *Reminder system*
 - Doing work - getting things done
 
-*Don't trust your brain for things your brain is not trustworthy for.*
+**Don't trust your brain for things your brain is not trustworthy for.**
 
 Important part is to have a system that is good enough so that you can iterate over it and build it incrementally. It must be stable at the metalevel.
 
 ## Collecting work
-Anything that comes into your world needs to be collected and needs to be in a recallable form. *Apply this everywhere*.
+Anything that comes into your world needs to be collected and needs to be in a recallable form. **Apply this everywhere**.
 [Timestamp](http://en.wikipedia.org/wiki/Mnemonic_major_system) any ideas you can't explicitly write down.
 Add as many inboxes as necessary. Every situation should have an inbox corresponding to it, but have as few as you can get away with. 
 
 - Use [remember the milk](http://rememberthemilk.com) as a good starting inbox. Gmail is also good.
 
+## Setting up RTM
+- Delete all lists.
+- Make a new list called MAIN.
+- Create a new smart list with "dueBefore:now" and name it as "~Due"
+
+## Situations to have inboxes
+- **in general: it happened; how can i record it?**
+- Middle of the night - dream journal
+- gtasks for when no internet
+- shower is a problem. think about this some more.
+- during sex - attempt to project idea into the sex itself
+
+Look for gaps in your collection system. When you find one, figure out a way to fix it.
+
 ## Misc
-Explore mnemonics. Memory palaces.
+- Explore mnemonics. [Memory palaces](http://en.wikipedia.org/wiki/Method_of_loci).
