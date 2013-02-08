@@ -1,5 +1,4 @@
-```
-toc: no
+---
 status: in-progress
 ...
 
@@ -13,8 +12,29 @@ I find it very difficult to strategically create long-term goals. Creating the g
 
 At first glance, it's hard to see the underlying theme behind these goals, and probably the reason of this is that no such theme exists. Optimizing my life to complete all of these goals is tricky - which should I attempt to do first? Is there some task that will accomplish all of them simultaneously? Without understanding why my brain wants the things it wants, any analysis on the topic is difficult. There's a metaphor to real life here: you will often be surprised about the interactions of corporeal objects if you don't understand the underlying physics. 
 
-Goal factoring is a technique that can help you solve the question "why do I want the things that I want?". 
+Goal factoring is a technique that can help you solve the question "why do I want the things that I want?". It breaks down goals into subgoals, and subgoals into sub-subgoals, ad infinitum.
 
 ## Getting Started
 
-First, grab a pencil and a piece of paper (or, if you're feeling fancy, [Setting Up yEd](yEd)). At the top of the page, start by jotting down an activity you seem to spend a lot of time doing, but don't particularly enjoy. My particular example was "spending time on facebook". 
+First, grab a pencil and a piece of paper (or, if you're feeling fancy, [yEd](Setting Up yEd)). At the top of the page, start by jotting down an activity you seem to spend a lot of time doing, but don't particularly enjoy. My particular example was **spending time on facebook**.
+
+Congraulations! You're officially on your way to a more accurate mental model! Give yourself a high-five, and we'll continue.
+
+Below this activity, write down reasons why you engage in this activity, even though you don't enjoy it. Things on my list were **staying in touch with friends**, **maintaining a personal identity**, **performing social experiments** and **instant messaging**, among others. Try to make this list as comprehensive as you can. Once you have as many things as you can think of, try the following [thought experiment](Thought Experiments): imagine that you have completely cut this activity out of your life. Is there anything about it you miss? If so, jot it down! Draw arrows from your activity to all of the subgoals you have listed.
+
+## Turtles All the Way Down
+
+Pick one of your subgoals, and think about all of the reasons you do that. Perform the same thought experiment, and write down more reasons. Pick a new sub-subgoal, and write down reasons you do *that*. I'm sure you get the picture.
+
+After a while, you will get to goals that either don't go anywhere, or loop around in circles forever. **Don't panic!** This is good! What you've identified here is one (or a strange loop) of your *terminal goals*. Common terminal goals include **social acceptance**, **happiness**, **family**, **love**, **survival**. You know, those things that everybody wants. The things that seem good by their own virtue. You might want to indicate a terminal goal by shading it a different color or otherwise highlighting it, so that you can quickly find them later.
+
+Now it's time to unwind your stack. Go back up a level, and recurse down a different subgoal than the one you chose previously. Get back down to terminal goals (it's okay if this goal has the same terminal values), and then choose a different subgoal to analyze. Repeat this process of up-and-down DAC traversal, until your original activity is *chalked full of nodes*. 
+
+Great! There's no more to do! We're done, right? 
+
+Wrong. Now we pick a new activity, and factor that. It is likely that this goal will go much faster. I found that most of my high-level activities shared much of the same goal infrastructure after two or three metalevels. Complete this goal entirely, adn then pick a new one.
+
+Keep going until you run out of things that you do with your life. Then start picking things that you'd like to do (my **being a recognized concert pianist** for example). Figure out why you want to do these abstract, long term things. 
+
+## Analysis
+
