@@ -28,11 +28,11 @@ Pick one of your subgoals, and think about all of the reasons you do that. Perfo
 
 After a while, you will get to goals that either don't go anywhere, or loop around in circles forever. **Don't panic!** This is good! What you've identified here is one (or a strange loop) of your *terminal goals*. Common terminal goals include **social acceptance**, **happiness**, **family**, **love**, **survival**. You know, those things that everybody wants. The things that seem good by their own virtue. You might want to indicate a terminal goal by shading it a different color or otherwise highlighting it, so that you can quickly find them later.
 
-Now it's time to unwind your stack. Go back up a level, and recurse down a different subgoal than the one you chose previously. Get back down to terminal goals (it's okay if this goal has the same terminal values), and then choose a different subgoal to analyze. Repeat this process of up-and-down DAC traversal, until your original activity is *chalked full of nodes*. 
+Now it's time to unwind your stack. Go back up a level, and recurse down a different subgoal than the one you chose previously. Get back down to terminal goals (it's okay if this goal has the same terminal values), and then choose a different subgoal to analyze. Repeat this process of up-and-down graph traversal, until your original activity is *chalked full of nodes*. 
 
 Great! There's no more to do! We're done, right? 
 
-*Wrong*. Now we pick a new activity, and factor that. It is likely that this goal will go much faster. I found that most of my high-level activities shared much of the same goal infrastructure after two or three metalevels. Complete this goal entirely, adn then pick a new one.
+*Wrong*. Now we pick a new activity, and factor that. It is likely that this goal will go much faster. I found that most of my high-level activities shared much of the same goal infrastructure after two or three metalevels. Complete this goal entirely, and then pick a new one.
 
 Keep going until you run out of things that you do with your life. Then start picking things that you'd like to do (my **being a recognized concert pianist** for example). Figure out why you want to do these abstract, long term things. Make a note of whether or not these long term projects have the same form as the activities that you *actually do*. This will be important for the analysis later.
 
