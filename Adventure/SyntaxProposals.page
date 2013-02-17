@@ -43,3 +43,5 @@ if not foo then foo = { } end; foo.bar = true
 print(foo->bar->baz)
 print(foo and foo.bar and foo.bar.baz)
 ~~~
+
+    TODO(sandy): update this with the real solution. there is a blog post about it
