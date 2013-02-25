@@ -45,7 +45,8 @@ Press the *I*, and then the "T" keys on your keyboard. The first item in your to
 
 Before pressing enter, we need to associate some metadata with this task. Type **#M** at the end of your task (this tells Remember The Milk to put this task in our reminder system, not the inbox). Don't press enter yet.
 
-Determine whether the task...
+Determine whether the task:
+
 - **ABSOLUTELY MUST be finished by a certain date**: append **^when it must be done by**. Examples: *^tomorrow*, *^sept 11*, *^three weeks from now*.
 - is a subtask of a larger project: append **#projects**
 - fits conveniently into a category (things like *correspondence*, *scheduling*, *homework*, *long term projects*, *errands*, etc): append **#category** (make sure to fill in the category with the one you selected)
