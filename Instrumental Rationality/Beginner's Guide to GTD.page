@@ -8,6 +8,10 @@ Remember The Milk is our main inbox and reminder system.
 
 ### Preparation
 
+Sign up for a free account at [Evernote](https://www.evernote.com/Registration.action). Don't do anything here yet.
+
+Sign up for a [Google account](https://accounts.google.com/NewAccount?continue=https%3A%2F%2Fwww.google.com%2Fcalendar%2Frender&followup=http%3A%2F%2Fwww.google.com%2Fcalendar&service=cl) (where we will get our calendar from), if you don't have one already. Don't do anything here either.
+
 Sign up for a free account at [Remember The Milk](https://www.rememberthemilk.com/signup/). 
 
 Click on **Settings** in the top right corner.
@@ -47,7 +51,7 @@ Before pressing enter, we need to associate some metadata with this task. Type *
 
 Determine whether the task:
 
-- **ABSOLUTELY MUST be finished by a certain date**: append **^when it must be done by**. Examples: *^tomorrow*, *^sept 11*, *^three weeks from now*.
+- ABSOLUTELY MUST be finished by a certain date: append **^when it must be done by**. Examples: *^tomorrow*, *^sept 11*, *^three weeks from now*.
 - is a subtask of a larger project: append **#projects**
 - fits conveniently into a category (things like *correspondence*, *scheduling*, *homework*, *long term projects*, *errands*, etc): append **#category** (make sure to fill in the category with the one you selected)
 
@@ -58,3 +62,27 @@ Hit the following keys on your keyboard: *ENTER*, *ESCAPE*, *DELETE*, *i*, *t*. 
 Repeat this section until your inbox is empty.
 
 *Pro tip: if your inbox is far too large to complete in one go, consider selecting all of the remaining tasks, assigning them the tag **#gtd** on the right side of the screen, moving them to the **M** list in the **More Actions** drop down list, then adding the following task "**finish defining work for the gtd tag #M #meta**"*.
+
+Add the following tasks:
+
+- "convert projects into evernotes #M #meta"
+- "schedule timeblocks for contexts #M #meta"
+- "schedule a meta timeblock #M #meta"
+
+## Google Calendar
+
+Make calendars for scheduled time, social events, GTD. Color them differently.
+
+Don't forget travel time!
+
+### Getting (Meta) Things Done
+
+Schedule an hour per week for meta.
+
+Schedule at least an hour per week for each context in RTM.
+
+Schedule a time for projects.
+
+## Evernote
+
+Move all projects into evernote.
