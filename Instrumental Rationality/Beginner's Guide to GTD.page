@@ -33,3 +33,27 @@ Hopefully by this point you have more than a screen's worth of memos to yourself
 
 Do a mental sweep and see if any of the following topics jog your memory: *commitments to friends/family/associates/subordinates/customers/society*, *communications to make (emails, faxes, phone calls)*, *things that need to be scheduled*, *things you need to ask other people for*, *financial concerns (bills, budgeting, taxes, mortgages)*, *information/objects you're waiting for*, *upcoming events (birthdays, weddings, vacations, social events)*, *health care (doctors, dentists, optometrists)*, and finally *hobbies*. Write down everything that came up.
 
+Is your list intimidatingly long? If so, great! If not, think of more things, you slacker.
+
+### Defining Work
+
+Now it's time to figure out how to accomplish each item in our to-do list.
+
+Press the *ESCAPE* key on your keyboard. This should deselect the *Add a new task* bar.
+
+Press the *I*, and then the "T" keys on your keyboard. The first item in your to-do list should be selected, and you should be back in the *Add a new task bar* (this is intentional). Type out the very first non-trivial action you would need to do to accomplish this goal, but don't hit enter yet. For example, if my task were "get my tires changed", I might write "find a mechanic who deals with tires". If my task were "read 1984", I might write "buy a copy of 1984". If my task were "learn to play an instrument", I might write "determine which instrument to learn to play". You get the idea.
+
+Before pressing enter, we need to associate some metadata with this task. Type **#M** at the end of your task (this tells Remember The Milk to put this task in our reminder system, not the inbox). Don't press enter yet.
+
+Determine whether the task...
+- **ABSOLUTELY MUST be finished by a certain date**: append **^when it must be done by**. Examples: *^tomorrow*, *^sept 11*, *^three weeks from now*.
+- is a subtask of a larger project: append **#projects**
+- fits conveniently into a category (things like *correspondence*, *scheduling*, *homework*, *long term projects*, *errands*, etc): append **#category** (make sure to fill in the category with the one you selected)
+
+Make sure your task fits into one of these three options. If not, consider making a **#misc** category, then immediately creating the task: "**sort out misc category #M #meta**" if you haven't already.
+
+Hit the following keys on your keyboard: *ENTER*, *ESCAPE*, *DELETE*, *i*, *t*. The task you just completed should be deleted from the list, and you should have the next one selected.
+
+Repeat this section until your inbox is empty.
+
+*Pro tip: if your inbox is far too large to complete in one go, consider selecting all of the remaining tasks, assigning them the tag **#gtd** on the right side of the screen, moving them to the **M** list in the **More Actions** drop down list, then adding the following task "**finish defining work for the gtd tag #M #meta**"*.
