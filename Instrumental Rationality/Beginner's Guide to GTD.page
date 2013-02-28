@@ -43,9 +43,9 @@ Is your list intimidatingly long? If so, great! If not, think of more things, yo
 
 Now it's time to figure out how to accomplish each item in our to-do list.
 
-Press the *ESCAPE* key on your keyboard. This should deselect the *Add a new task* bar.
+Press the *ESCAPE* key on your keyboard. This should deselect the **Add a new task** bar.
 
-Press the *I*, and then the "T" keys on your keyboard. The first item in your to-do list should be selected, and you should be back in the *Add a new task bar* (this is intentional). Type out the very first non-trivial action you would need to do to accomplish this goal, but don't hit enter yet. For example, if my task were "get my tires changed", I might write "find a mechanic who deals with tires". If my task were "read 1984", I might write "buy a copy of 1984". If my task were "learn to play an instrument", I might write "determine which instrument to learn to play". You get the idea.
+Press the *I*, and then the "T" keys on your keyboard. The first item in your to-do list should be selected, and you should be back in the **Add a new task bar** (this is intentional). Type out the very first non-trivial action you would need to do to accomplish this goal, but don't hit enter yet. For example, if my task were "get my tires changed", I might write "find a mechanic who deals with tires". If my task were "read 1984", I might write "buy a copy of 1984". If my task were "learn to play an instrument", I might write "determine which instrument to learn to play". You get the idea.
 
 Before pressing enter, we need to associate some metadata with this task. Type **#M** at the end of your task (this tells Remember The Milk to put this task in our reminder system, not the inbox). Don't press enter yet.
 
@@ -99,21 +99,33 @@ Each of these calendars represents a different facet of your life:
 
 By hovering your mouse over the name of the calendar on the left, a down arrow will appear. Clicking on this will reveal a color swatch. Ensure each of your calendars has a distinct and meaningful color. Give your *Deadlines* calendar an exceptionally eye catching color, as you definitely always want this to be at the forefront of your mind.
 
-Don't forget travel time!
+### Scheduling
 
-Good idea: sleep, routines. 
+It's now time to fill in as much of your calendar as you can. Start with your *External* calendar - fill in as much detail about your rigid schedule as you can. Creating events in Google Calendar is outside the scope of this article, but the [help](https://support.google.com/calendar/?hl=en) page has a lot of great resources.
 
-In a separate calendar: people whose schedule affects you.
+*Remember: most of your External calendar will be reoccurring. Use Google Calendar's built-in rescheduling support to facilitate this.*
+
+*Important: don't forget to schedule time to travel between locations. Put this travel time in your Upkeep calendar.*
+
+Now, fill in your *Upkeep* calendar. As accurately as you can, mark off when you sleep, your morning/evening routines, when you eat, and anything else you can think of that fits in this calendar. 
+
+For each of your important people, fill in as much detail as you know. It doesn't have to be perfect - you can always ask them later (in fact, do so. This might pique their interest on a GTD system also)! 
+
+After all of this work, you probably have a good idea of when your spare time is. Prepare to say goodbye to it in the name of *Getting Things Done*! Schedule the following under your *GTD* calendar:
+
+- **one hour per week** to work on **Meta** tasks (we will discuss this in the next section).
+- **one hour per week** to work on **Pragma** tasks (again, later).
+- **at least two hours per week** to work on **Projects**
+- **at least one hour per week** for each **category in Remember The Milk**.
+- **half an hour per day** to work on tasks **Due** that day.
+
+The eventual goal is to live by your calendar. Whenever one of these time slots arrives, be sure to work [as intently as possible](Pomodoros) on the context at hand. This is the secret to the method! This is where the magic comes from!
 
 ### Getting (Meta) Things Done
 
-Schedule an hour per week for meta.
+Describe meta here
 
-Schedule a daily due block.
-
-Schedule at least an hour per week for each context in RTM.
-
-Schedule a time for projects.
+Why pragma?
 
 ## Evernote
 
