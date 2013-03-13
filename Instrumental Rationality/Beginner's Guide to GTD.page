@@ -91,9 +91,11 @@ Each of these calendars represents a different facet of your life:
 
 - *External*: this calendar is for rigid blocks of time over which you don't have control. Generally, work hours and other people's schedules which affect you will fall under this category.
 - *GTD*: where you will allocate time to work on your Remember The Milk tasks.
+- *Potential*: a calendar to track reoccurring events it would be nice, though unlikely, to get to.
 - *Social*: this calendar is used for social engagements. While it's probably not necessary you attend these, it's very useful to keep a social calendar.
 - *Upkeep*: a calendar for necessary, but boring parts of life. Here you will block your sleeping patterns, travel time, and other things that are done on a daily basis.
-- *Flexible*: flexible is a space to block off for downtime, When you start scheduling your entire life, it's easy to forget about spare time. 
+- *Relaxation*: this is a space to block off for downtime, When you start scheduling your entire life, it's easy to forget about spare time. 
+- *Annotations*: use this calendar to mark weekly goals, or other meta-data useful for the scheduling phase.
 - *Deadlines*: a psuedo-calendar to mark hard deadlines for projects. No matter what, tasks must be done before their time on this calendar is up.
 - Important people: the reason behind this calendar is so that you can get a general feel for the schedule of people important to you. Knowing this means you can prioritize when you do things to ensure keeping the relationship optimal.
 
@@ -111,25 +113,30 @@ Now, fill in your *Upkeep* calendar. As accurately as you can, mark off when you
 
 For each of your important people, fill in as much detail as you know. It doesn't have to be perfect - you can always ask them later (in fact, do so. This might pique their interest on a GTD system also)! 
 
-After all of this work, you probably have a good idea of when your spare time is. Prepare to say goodbye to it in the name of *Getting Things Done*! Schedule the following under your *GTD* calendar:
+After all of this work, you probably have a good idea of when your spare time is. Schedule the following under your *GTD* calendar:
 
 - **one hour per week** to work on **Meta** tasks (we will discuss this in the next section).
 - **one hour per week** to work on **Pragma** tasks (again, later).
-- **at least two hours per week** to work on **Projects**
-- **at least one hour per week** for each **category in Remember The Milk**.
-- **half an hour per day** to work on tasks **Due** that day.
+- **one half hour per day** for strategizing - don't worry, you won't use all of this.
+- **at least two [pomodoros](Pomodoros) per day** for GTD.
+- **one pomodoro per day** to work on *Creative Recreation*
+- **one pomodoro per day** to learn something new.
+- **one pomodoro every second day** to work on **Projects**
+- **one pomodoro every other day** to work on **Miscellaneous**
 
-The eventual goal is to live by your calendar. Whenever one of these time slots arrives, be sure to work [as intently as possible](Pomodoros) on the context at hand. This is the secret to the method! This is where the magic comes from!
+For now, schedule these daily pomodoros in anywhere you reliably have spare time. The point of the Strategy half hour is to ensure your schedule is sane, allocate your pomodoros to when you have time, and look at any tasks remaining in your **~Due** list.
 
 ### Getting (Meta) Things Done
 
-Describe meta here
+So what's this weekly hour timeblock for **Meta** all about? Good question! Meta is your weekly time to improve GTD! You should spend it looking at what went well last week, what didn't, and changing things around to better suit your individual lifestyle. Don't be afraid to experiment during this period. I find it's also helpful to use **Meta** to strategize about **Projects**, set up my [Anki Decks](Anki), and other tasks which don't easily fit into my schedule.
 
-Why pragma?
+**What's this pragma thingy? **
 
-## Evernote
+Your pragma block is the most surefire way of convincing you that GTD is a habit you want in your routine. It's an hour every week which you're allowed to spend on directly making your life better. Throughout the week, make a habit of inboxing any minor annoyances you come across, but which are too small to be worth dealing with. Pragma is your opportunity to improve these small irritants. After a couple of pragma timeblocks, you will be convinced that this system really works.
 
 Move all projects into evernote.
+
+## Set up day tracking
 
 ## Email
 
