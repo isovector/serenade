@@ -16,7 +16,7 @@ Describe the message header.
 
 ~~~ { .c }
 #define MAX_MESSAGE_LENGTH (MMU_BLOCK_SIZE - sizeof(msg_header_t))
-typedef struct message_envelope {
+typedef struct {
     msg_header_t header;
     char data[MAX_MESSAGE_LENGTH];
 } msg_envelope_t;
