@@ -12,6 +12,8 @@ typedef struct {
 } msg_header_t;
 ~~~
 
+Describe the message header.
+
 ~~~ { .c }
 #define MAX_MESSAGE_LENGTH (MMU_BLOCK_SIZE - sizeof(msg_header_t))
 typedef struct message_envelope {
@@ -20,11 +22,22 @@ typedef struct message_envelope {
 } msg_envelope_t;
 ~~~
 
+Describe message envelopes.
+
 ~~~ { .c }
-#define MMU_MEMORY_START ((char*)&
+#define MMU_MEMORY_SIZE ((char*)MMU_MAX_MEMORY_ADDR - MMU_MEMORY_START)
+#define MMU_MAX_MEMORY_SIZE 0x4000
+
+#define MMU_BLOCK_SIZE 512
+#define MMU_NUM_BLOCKS (MMU_MEMORY_SIZE / MMU_BLOCK_SIZE)
+
+typedef struct {
+    char *start, *end;
     mmu_blockdesc_t *next;
 } mmu_blockdesc_t;
 ~~~
+
+Describe block desriptor
 
 ~~~ { .c }
 typedef struct {
@@ -33,6 +46,7 @@ typedef struct {
 } mmu_memtable_t;
 ~~
 
+Describe memtable.
 
 ~~~ { .c }
 typedef struct pcb {
@@ -43,3 +57,5 @@ typedef struct pcb {
     msg_envelope_t *msg_head, *msg_tail;
 } pcb_t;
 ~~~
+
+Describe pcb.
