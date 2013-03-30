@@ -34,7 +34,9 @@ typedef struct {
 } msg_envelope_t;
 ~~~
 
-Describe message envelopes.
+$msg\_envelope\_t$ is the actual message structure. It is designed to be perfectly aligned in memory blocks, and made of up the following fields:
+- **header**: metadata for the message.
+- **data**: a character array representing the message payload. This pointer may be cast to other structures for usability concerns.
 
 ~~~ { .c }
 #define MMU_MEMORY_SIZE ((char*)MMU_MAX_MEMORY_ADDR - MMU_MEMORY_START)
