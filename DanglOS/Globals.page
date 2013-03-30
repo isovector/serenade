@@ -14,10 +14,14 @@ typedef struct {
 } msg_header_t;
 ~~~
 
-The $msg_header_t$ describes the entire metadata of a message, including routing information, payload size, and state of memory-managedness. It is separate from the $msg_envelope_t$ type as an implementation detail to ensure that a message is exactly the same length as a memory block. The fields of $msg_header_t$ are used as follows:
+The $msg\_header\_t$ describes the entire metadata of a message, including routing information, payload size, and state of memory-managedness. It is separate from the $msg\_envelope\_t$ type as an implementation detail to ensure that a message is exactly the same length as a memory block. The fields of $msg\_header\_t$ are used as follows:
 
-- ~~~ { .c } enum msg_type_t type ~~~ does this work?
-
+- **type**: an enum identifying the type of message. May be one of the following values: *USER_MSG, SYSTEM_MSG, CMD_REGISTER_MSG, CMD_NOTIFY_MSG, CMD_HOTKEY_MSG*, although it is recommended only the first two be used directly by non-system-code.
+- **ctrl**: an extra byte of metadata, intended to distinguish between different subtypes of message types. User-code may use this field for whatever purpose it find [sic] useful.
+- **dest**: the pid of the recipient process. This field is an implementation detail and as such should not directly be set any user-code.
+- **src**: the pid of the sending process. This field is an implementation detail and as such should not directly be set by any user-code.
+- **next**: a pointer to the next message in the mailbox queue. This field should under no circumstances be used by user-code.
+- **tick**:
 
 
 ~~~ { .c }
