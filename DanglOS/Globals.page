@@ -44,7 +44,7 @@ typedef struct {
     char bitVector[(MMU_MAX_MEMORY_SIZE / MMU_BLOCK_SIZE) / 8];
     mmu_blockdesc_t *block;
 } mmu_memtable_t;
-~~
+~~~
 
 Describe memtable.
 
