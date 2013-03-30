@@ -1,0 +1,40 @@
+~~~ { .c }
+typedef struct {
+    msg_type_t type;
+    char ctrl;
+    
+    int dest, src;
+    size_t len;
+    struct message_envelope *next;
+    
+    uint32_t tick;
+    mem_type_t memory_type;
+} msg_header_t;
+
+#define MAX_MESSAGE_LENGTH (MMU_BLOCK_SIZE - sizeof(msg_header_t))
+typedef struct message_envelope {
+    msg_header_t header;
+    char data[MAX_MESSAGE_LENGTH];
+} msg_envelope_t;
+
+
+
+extern unsigned int Image$$RW_IRAM1$$ZI$$Limit;
+#define MMU_MEMORY_START ((char*)&
+    struct memory_block_descriptor *next;
+} mmu_blockdesc_t;
+
+typedef struct memory_table {
+    char bitVector[(MMU_MAX_MEMORY_SIZE / MMU_BLOCK_SIZE) / 8];
+    mmu_blockdesc_t *block;
+} mmu_memtable_t;
+
+typedef struct pcb {
+    uint32_t *stackptr;
+    uint32_t pid;
+    proc_state_t state;
+    priority_t priority;
+    msg_envelope_t *msg_head, *msg_tail;
+} pcb_t;
+
+~~~
