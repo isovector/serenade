@@ -1,3 +1,5 @@
+# Globals Information
+
 ~~~ { .c }
 typedef struct {
     enum msg_type_t type;
@@ -12,7 +14,11 @@ typedef struct {
 } msg_header_t;
 ~~~
 
-Describe the message header.
+The $msg_header_t$ describes the entire metadata of a message, including routing information, payload size, and state of memory-managedness. It is separate from the $msg_envelope_t$ type as an implementation detail to ensure that a message is exactly the same length as a memory block. The fields of $msg_header_t$ are used as follows:
+
+- ~~~ { .c } enum msg_type_t type ~~~ does this work?
+
+
 
 ~~~ { .c }
 #define MAX_MESSAGE_LENGTH (MMU_BLOCK_SIZE - sizeof(msg_header_t))
