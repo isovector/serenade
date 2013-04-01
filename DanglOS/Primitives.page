@@ -1,0 +1,27 @@
+# Primitives
+
+## Scheduling
+
+How does the scheduler work?
+
+## Memory Management
+
+How does the mmu work? What happens on *request_memory_block* and *release_memory_block*?
+
+## Processor Management
+
+How does *release_processor* do its thang?
+
+## Interprocess Communication
+
+send_message  
+receive_message
+
+## Timing Services
+
+delayed_send
+
+## Process Priority
+
+set_process_priority  
+get_process_priority
