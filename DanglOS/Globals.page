@@ -49,9 +49,22 @@ The global define $MAX\_MESSAGE\_LENGTH$ is the maximum payload size per message
 
 ~~~ { .c }
 void cmd_init(void);
-void cmd_register(const char* tag);
-char* cmd_parse(char* c);
 ~~~
+
+Initializes the command subsystem. This function must be called before any other command functions.
+
+~~~ { .c }
+void cmd_register(const char* tag);
+~~~
+
+Registers the endpoint of a command to the calling process. Henceforth, the calling process will receive $CMD\_NOTIFY\_MSG$ messages from the command subsystem, with message payloads consisting of "%<tag> <arguments>". $tag$ should not contain a space, as these are used internall as argument separators.
+
+~~~ { .c }
+char* cmd_parse(char* payload);
+~~~
+
+Replaces the first space in $payload$ with a *NULL* byte, and returns the next character. This helper function is useful for parsing command arguments out of message payloads.
+
 
 ### Error Subsystem
 
@@ -59,15 +72,33 @@ char* cmd_parse(char* c);
 const char *err_lookup(error_t err);
 ~~~
 
+Returns a human-readable representation of an error thrown by any other subsystem.
+
 ### Memory Management Subsystem
 
 ~~~ { .c }
 void mmu_init(void);
-int mmu_can_alloc_mem(void);
+~~~
 
+Initializes the memory management subsystem. This function must be called before any other mmu functions are, or *Bad Things* will happen and hard faults will likely occur.
+
+~~~ { .c }
+int mmu_can_alloc_mem(void);
+~~~
+
+Returns *true* if there are allocatable memory blocks.
+
+~~~ { .c }
 void *s_request_memory_block(void);
+~~~
+
+Returns a pointer to an address in memory of size $MMU\_BLOCK\_SIZE$. If no memory blocks are free, this function will block until one has been returned to the system.
+
+~~~ { .c }
 int s_release_memory_block(void *);
 ~~~
+
+Frees a memory block so that it may be reused by other processes. Most system processes will automatically call this function on any messages passed to them, unless the message block is explicitly set as having user-managed memory policy.
 
 ### Messaging Subsystem
 
