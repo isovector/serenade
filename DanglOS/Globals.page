@@ -2,6 +2,8 @@
 
 ## Data Structures
 
+### msg_header_t
+
 ~~~ { .c }
 typedef struct {
     enum msg_type_t type;
@@ -27,6 +29,7 @@ The $msg\_header\_t$ describes the entire metadata of a message, including routi
 - **~~memory_type~~**: a value representing whether or not this message employs regular memory management semantics.
 - **len**: intended to describe the length of the data payload.
 
+### msg_envelope_t
 
 ~~~ { .c }
 #define MAX_MESSAGE_LENGTH (MMU_BLOCK_SIZE - sizeof(msg_header_t))
