@@ -1,5 +1,7 @@
 # Globals Information
 
+## Data Structures
+
 ~~~ { .c }
 typedef struct {
     enum msg_type_t type;
@@ -35,41 +37,88 @@ typedef struct {
 ~~~
 
 $msg\_envelope\_t$ is the actual message structure. It is designed to be perfectly aligned in memory blocks, and made of up the following fields:
+
 - **header**: metadata for the message.
 - **data**: a character array representing the message payload. This pointer may be cast to other structures for usability concerns.
 
-~~~ { .c }
-#define MMU_MEMORY_SIZE ((char*)MMU_MAX_MEMORY_ADDR - MMU_MEMORY_START)
-#define MMU_MAX_MEMORY_SIZE 0x4000
+The global define $MAX\_MESSAGE\_LENGTH$ is the maximum payload size per message.
 
-#define MMU_BLOCK_SIZE 512
-#define MMU_NUM_BLOCKS (MMU_MEMORY_SIZE / MMU_BLOCK_SIZE)
+## Functions
 
-typedef struct {
-    char *start, *end;
-    mmu_blockdesc_t *next;
-} mmu_blockdesc_t;
-~~~
-
-Describe block desriptor
+### Command Subsystem
 
 ~~~ { .c }
-typedef struct {
-    char bitVector[(MMU_MAX_MEMORY_SIZE / MMU_BLOCK_SIZE) / 8];
-    mmu_blockdesc_t *block;
-} mmu_memtable_t;
+void cmd_init(void);
+void cmd_register(const char* tag);
+char* cmd_parse(char* c);
 ~~~
 
-Describe memtable.
+### Error Subsystem
 
 ~~~ { .c }
-typedef struct pcb {
-    uint32_t *stackptr;
-    uint32_t pid;
-    proc_state_t state;
-    priority_t priority;
-    msg_envelope_t *msg_head, *msg_tail;
-} pcb_t;
+const char *err_lookup(error_t err);
 ~~~
 
-Describe pcb.
+### Memory Management Subsystem
+
+~~~ { .c }
+void mmu_init(void);
+int mmu_can_alloc_mem(void);
+
+void *s_request_memory_block(void);
+int s_release_memory_block(void *);
+~~~
+
+### Messaging Subsystem
+
+~~~ { .c }
+msg_envelope_t *alloc_message(bool managed);
+void free_message(void *pmsg);
+
+int send_message(int pid, void *msg);
+int send_kernel_message(int dest, int src, void *pmsg);
+int delayed_send(int pid, void *msg, uint32_t delay);
+
+void *receive_message(int *sender);
+~~~
+
+### Process Subsystem
+
+~~~ { .c }
+void proc_init(void);
+
+int proc_get_pid(void);
+int proc_is_valid_pid(int pid);
+
+int release_processor(void);
+int proc_set_msg_blocked(int pid, int block);
+
+int set_priority(int, int);
+int get_priority(int);
+~~~
+
+### Timer Subsystem
+
+~~~ { .c }
+void timer_init(void);
+~~~
+
+## Constants
+
+~~~ { .c }
+#define PROC_NULL_PID 0
+
+#define UPROC_PONG1_PID 1
+#define UPROC_PONG2_PID 2
+
+#define PROCA_PID 7
+#define PROCB_PID 8
+#define PROCC_PID 9
+
+#define PROC_CLOCK_PID 10
+
+#define CRT_DISPLAY_PID 11
+#define CMD_DECODER_PID 12
+#define HOTKEY_PROC 13
+
+~~
