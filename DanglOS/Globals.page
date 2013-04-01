@@ -120,5 +120,4 @@ void timer_init(void);
 #define CRT_DISPLAY_PID 11
 #define CMD_DECODER_PID 12
 #define HOTKEY_PROC 13
-
-~~
+~~~
