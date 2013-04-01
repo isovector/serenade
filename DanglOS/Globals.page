@@ -104,29 +104,77 @@ Frees a memory block so that it may be reused by other processes. Most system pr
 
 ~~~ { .c }
 msg_envelope_t *alloc_message(bool managed);
+~~~
+
+A helper function around $s\_request\_memory\_block$ which initializes the memory as a message and sets whether or not the message should be automatically managed by system processes.
+
+~~~ { .c }
 void free_message(void *pmsg);
+~~~
 
+Conditionally calls $s_release_memory_block$ if and only if the message is not marked as user managed memory.
+
+~~~ { .c }
 int send_message(int pid, void *msg);
-int send_kernel_message(int dest, int src, void *pmsg);
-int delayed_send(int pid, void *msg, uint32_t delay);
+~~~
 
+Sends a $msg\_envelope\_t*$ msg to process $pid$. This function will pre-empt if the recipient process is waiting for a message and has higher priority than the current process.
+
+~~~ { .c }
+int send_kernel_message(int dest, int src, void *pmsg);
+~~~
+
+Sends a message in kernel mode to process $dest$, appearing to come from process $src$. Messages sent in kernel mode will never pre-empt, and are thus safe to send in interrupt contexts.
+
+~~~ { .c }
+int delayed_send(int pid, void *msg, uint32_t delay);
+~~~
+
+Sends a message to process $pid$ after $delay$ milliseconds.
+
+~~~ { .c }
 void *receive_message(int *sender);
 ~~~
+
+Returns a pointer to a $msg\_envelope\_t$ that was previously sent to the current process. If no such message has been sent, this function will block until such time. $sender$ is an output parameter, whose value will be changed to the sending pid of the message. $sender$ may be set to *NULL* if no such behavior is required.
 
 ### Process Subsystem
 
 ~~~ { .c }
 void proc_init(void);
-
-int proc_get_pid(void);
-int proc_is_valid_pid(int pid);
-
-int release_processor(void);
-int proc_set_msg_blocked(int pid, int block);
-
-int set_priority(int, int);
-int get_priority(int);
 ~~~
+
+Initializes the process subsystem. This function is responsible for setting up the default processes.
+
+~~~ { .c }
+int proc_get_pid(void);
+~~~
+
+Returns the pid of the currently running process.
+
+~~~ { .c }
+int proc_is_valid_pid(int pid);
+~~~
+
+Returns *true* if and only if $pid$ is a valid pid.
+
+~~~ { .c }
+int release_processor(void);
+~~~
+
+Relinquishes control of the processor, so other processes may run.
+
+~~~ { .c }
+int set_priority(priority_t priority, int pid);
+~~~
+
+Sets the priority of process $pid$ to $priority$.
+
+~~~ { .c }
+priority_t get_priority(int pid);
+~~~
+
+Returns the priority of process $pid$, or -1 if no such process exists.
 
 ### Timer Subsystem
 
@@ -134,20 +182,11 @@ int get_priority(int);
 void timer_init(void);
 ~~~
 
+Initializes the timer subsystem. Without this call, subsequent $delayed\_send$ messages will fail to propagate.
+
 ## Constants
 
 ~~~ { .c }
-#define PROC_NULL_PID 0
-
-#define UPROC_PONG1_PID 1
-#define UPROC_PONG2_PID 2
-
-#define PROCA_PID 7
-#define PROCB_PID 8
-#define PROCC_PID 9
-
-#define PROC_CLOCK_PID 10
-
 #define CRT_DISPLAY_PID 11
 #define CMD_DECODER_PID 12
 #define HOTKEY_PROC 13
