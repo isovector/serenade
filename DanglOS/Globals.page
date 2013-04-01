@@ -57,7 +57,7 @@ Initializes the command subsystem. This function must be called before any other
 void cmd_register(const char* tag);
 ~~~
 
-Registers the endpoint of a command to the calling process. Henceforth, the calling process will receive $CMD\_NOTIFY\_MSG$ messages from the command subsystem, with message payloads consisting of "%<tag> <arguments>". $tag$ should not contain a space, as these are used internall as argument separators.
+Registers the endpoint of a command to the calling process. Henceforth, the calling process will receive $CMD\_NOTIFY\_MSG$ messages from the command subsystem, with message payloads consisting of "%$tag$ $args$". $tag$ should not contain a space, as these are used internall as argument separators.
 
 ~~~ { .c }
 char* cmd_parse(char* payload);
