@@ -6,7 +6,7 @@ How does the scheduler work?
 
 ## Memory Management
 
-Our memory allocator is implemented as a dynamically partitioning linked list. 
+Our memory allocator is implemented as a dynamically partitioning linked list. The following pseudo code should provide a high-level overview of the implementation details.
 
 ~~~ { .c }
 struct memdesc {
@@ -18,38 +18,52 @@ struct memdesc {
 memdesc *memoryHead;
 ~~~
 
+The $memdesc$ structure has three fields: **start** which marks the starting address of the unpartitioned memory, and **end** which likewise marks the end of allocatable memory. It also contains a field **next** which acts as a stack to previously partitioned blocks of memory which have subsequently been released. The **next** field allows us to retrieve freed memory blocks in constant time, and avoid a linear-time search.
+
+The $memoryHead$ global points to the current head of our linked list, and is assumed to have **start** and **end** already initialized.
+
 ~~~ { .c }
 void *request_memory_block() {
     void *block = NULL;
 
+    // if a memory block has already been released, give that out
     if (memoryHead->next) {
         memoryHead->next->start;
         memoryHead->next = memoryHead->next->next;
     }
 
+    // if we have unpartitioned memory left, use it
     if (memoryHead->start + MMU_BLOCK_SIZE <= memoryHead->end) {
         block = memoryHead->start;
         memoryHead->start += MMU_BLOCK_SIZE;
     }
 
+    // if one of the earlier allocating schemes was succesful, return it
     if (block) {
         mark_as_allocated(block);
         return block;
-    } else {
-        // wait for memory to be freed
-        return request_memory_block();
-    }
-}
+    } 
 
+    // otherwise, block until we have memory available
+    wait_for_memory();
+    return request_memory_block();
+}
 ~~~
+
+Here, $mark\_as\_allocated$ is defined as setting a bit in a bitmask representing the current state of allocated memory blocks. It's purpose, as shown in the following block of code, is to prevent memory from being freed more than once, which could potentially cause self-referential allocation cycles.
+
+$release\_memory\_block$ is relatively straight-forward:
 
 ~~~ { .c }
 int release_memory_block(void *block) {
     size_t offset = block - memoryHead->start;
+
+    // ensure the block is well-aligned
     if (offset % MMU_BLOCK_SIZE != 0) {
         return not_aligned_error;
     }
 
+    // ensure the block is already allocated
     if (!is_marked_as_allocated(blocked)) {
         return already_freed_error;
     }
