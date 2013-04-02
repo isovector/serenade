@@ -2,7 +2,7 @@
 
 ## Scheduling
 
-How does the scheduler work?
+The scheduler is implemented as a priority queue. Within each priority level, processes are treated in a round-robin fashion in an attempt to prevent any one extremely-high priority process from monopolizing the system.
 
 ## Memory Management
 
@@ -82,28 +82,25 @@ int release_memory_block(void *block) {
 struct pcb {
     proc_state state;
     void *stack_pointer;
+    msg_envelope_t *next_message;
 };
 
 pcb processes[];
 ~~~
 
-$pcb$ is a structure which tracks processes information. Among other things, it maintains the current **state** of the process, and the **stack_pointer** it had the last time it called $release\_processor$.
+$pcb$ is a structure which tracks processes information. Among other things, it maintains the current **state** of the process, the **stack_pointer** it had the last time it called $release\_processor$, and a pointer to the head of a linked list of messages in the mailbox, $next\_message$.
 
 $processes$ is an array of all processes currently running on the system.
 
 $release\_processor$'s implementation is relatively unchanged from the sample code. It simply asks the scheduler which process to run next, performs a context-switch to it, and carries along merrily on its way.
 
 ~~~ { .c }
-
 void release_processor() {
     push_registers_onto_stack();
 
     int new_pid = get_next_process_pid();
 
     pcb *cur_proc = &
-
-    // save our current stack pointer, and restore the old one
-    cur_proc->stack_pointer = get_stack_pointer();
     set_stack_pointer(next_proc->stack_pointer);
 
     pop_registers_off_stack();
@@ -112,14 +109,57 @@ void release_processor() {
 
 ## Interprocess Communication
 
-send_message  
-receive_message
+The messaging system is implemented as a per-process queue representing the process' mailbox. To receive a message, we check first if a message has already come in, and if so we dequeue it from the mailbox. If no message currently exists, the process blocks itself and removes itself from the scheduler with the intention of being rescheduled by the message sending code later.
+
+~~~ { .c }
+void *receive_message(int *sender) {
+    pcb *cur_pcb = &
+    msg_envelope_t *msg;
+
+    while (true) {
+        msg = cur_pcb->next_message;
+
+        // a message is already in the mailbox
+        if (msg) {
+            cur_pcb->next_message = msg->next;
+            *sender = msg->sender;
+
+            return msg;
+        }
+
+        // wait for a message to arrive
+        pcb->state = BLOCKED_ON_MESSAGE;
+        remove_from_scheduler(current_pid);
+        release_processor();
+    }
+}
+~~~
+
+Message sending is likewise very straight forward. Before sending the message, its routing information is first filled in, and then it is appended to the recipient process' mailbox. If the recipient process is currently *BLOCKED_ON_MESSAGE*, it is rescheduled. Finally, if the destination process has a higher priority than the current process, the current process relinquishes its time share.
+
+~~~ { .c }
+void send_message(msg_envelope_t *msg, int pid) {
+    msg->sender = current_pid;
+    msg->recipient = pid;
+
+    pcb *dest_proc = &
+    if (pcb->state == BLOCKED_ON_MESSAGE) {
+        pcb->state = READY;
+        add_to_scheduler(pid);
+    }
+
+    add_message_to_list(pcb->next_message, msg);
+
+    if (dest_proc->priority > cur_proc->priority) {
+        release_processor();
+    }    
+}
+~~~
 
 ## Timing Services
 
-delayed_send
+I DONT KNOW WAT IM DOIN. Jacob, would you mind filling this in?
 
 ## Process Priority
 
-set_process_priority  
-get_process_priority
+To facilitate changing priorities of processes, we store each process' priority in the $pcb$. This allows for constant-time priority lookups. Because the scheduler is implemented as a series of queues each with a given priority, changing priority is as simple as removing the process from one location in the priority queue and adding it to another location. We consider the implementation self-evident enough that it need not be described any further here.
