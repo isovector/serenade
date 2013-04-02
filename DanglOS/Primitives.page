@@ -78,7 +78,37 @@ int release_memory_block(void *block) {
 
 ## Processor Management
 
-How does *release_processor* do its thang?
+~~~ { .c }
+struct pcb {
+    proc_state state;
+    void *stack_pointer;
+};
+
+pcb processes[];
+~~~
+
+$pcb$ is a structure which tracks processes information. Among other things, it maintains the current **state** of the process, and the **stack_pointer** it had the last time it called $release\_processor$.
+
+$release\_processor$'s implementation is relatively unchanged from the sample code. It simply asks the scheduler which process to run next, performs a context-switch to it, and carries along merrily on its way.
+
+~~~ { .c }
+
+void release_processor() {
+    int new_pid = get_next_process_pid();
+
+    pcb *cur_proc = &
+    pcb *next_proc = &
+
+    cur_proc->state = READY;
+    next_proc->state = RUNNING;
+
+    // save our current stack pointer, and restore the old one
+    cur_proc->stack_pointer = get_stack_pointer;
+    set_stack_pointer(next_proc->stack_pointer);
+
+    return;
+}
+~~~
 
 ## Interprocess Communication
 
