@@ -6,7 +6,61 @@ How does the scheduler work?
 
 ## Memory Management
 
-How does the mmu work? What happens on *request_memory_block* and *release_memory_block*?
+Our memory allocator is implemented as a dynamically partitioning linked list. 
+
+~~~ { .c }
+struct memdesc {
+    byte *start;
+    byte *end;
+    memdesc *next;
+};
+
+memdesc *memoryHead;
+~~~
+
+~~~ { .c }
+void *request_memory_block() {
+    void *block = NULL;
+
+    if (memoryHead->next) {
+        memoryHead->next->start;
+        memoryHead->next = memoryHead->next->next;
+    }
+
+    if (memoryHead->start + MMU_BLOCK_SIZE <= memoryHead->end) {
+        block = memoryHead->start;
+        memoryHead->start += MMU_BLOCK_SIZE;
+    }
+
+    if (block) {
+        mark_as_allocated(block);
+        return block;
+    } else {
+        // wait for memory to be freed
+        return request_memory_block();
+    }
+}
+
+~~~
+
+~~~ { .c }
+int release_memory_block(void *block) {
+    size_t offset = block - memoryHead->start;
+    if (offset % MMU_BLOCK_SIZE != 0) {
+        return not_aligned_error;
+    }
+
+    if (!is_marked_as_allocated(blocked)) {
+        return already_freed_error;
+    }
+
+    mark_as_free(block);
+    block->next = memoryHead->next;
+    memoryHead->next = block;
+
+    return success;
+}
+~~~
 
 ## Processor Management
 
